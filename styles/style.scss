@@ -1,0 +1,74 @@
+$fono_spalva:#a7f24b;
+$fono_spalva2:#fae152;
+$fono_spalva3:#abf794;
+$teksto_spalva:#fcfcfc;
+$border_radius:15px;
+
+@mixin lygiavimas_centre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin lygiavimas {
+  display: flex;
+  align-items: center;
+}
+@mixin border {
+  border-color: white;
+  border-style: dashed;
+  border-width: 1px;
+}
+@mixin border_style {
+  border-color: white;
+  border-style: solid;
+  border-width: 1px;
+}
+
+ .container {
+   background-color: $fono_spalva;
+   height: 250px;
+   @include lygiavimas_centre;
+
+   section {
+     background-color: $fono_spalva2;
+     height: 90%;
+     width: 99%;
+
+     h2 {
+       @include lygiavimas_centre;
+       @include border;
+       border-radius: $border_radius;
+       color: $teksto_spalva;
+       padding: 10px 0;
+     }
+       ul {
+         background-color: $fono_spalva3;
+         margin-left: 25px;
+         padding-inline-start: 0px;
+         height: fit-content;
+         vertical-align: bottom;
+
+         li
+         { list-style: none;
+           @include border_style;
+           height: 100%;
+           line-height: 26px;
+
+           a {
+             text-transform: uppercase;
+           }
+           span {
+             color: $teksto_spalva;
+             @include lygiavimas_centre;
+             background-color: black;
+             padding: 25px;
+             width: fit-content;
+             border-radius: $border_radius;
+             float: right;
+           }
+       }
+     }
+   }
+ }
+
+
